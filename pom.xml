@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.noeliaiglesias</groupId>
-    <artifactId>SpringBootWebApp</artifactId>
+    <artifactId>spring-boot-web-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>SpringBootWebApp</name>
-    <description>SpringBootWebApp</description>
+    <name>spring-boot-web-app</name>
+    <description>SpringBootWebApp for teaching proposals</description>
     <url/>
     <licenses>
         <license/>
