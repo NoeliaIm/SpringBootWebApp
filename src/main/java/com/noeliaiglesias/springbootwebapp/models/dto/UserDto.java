@@ -19,6 +19,8 @@ public class UserDto {
 
     private LocalDate  birthDate;
 
+    private String email;
+
     public String getBirthDate() {
         return DateUtils.getFormattedLocalDate(Objects.requireNonNullElseGet(birthDate, LocalDate::now));
     }

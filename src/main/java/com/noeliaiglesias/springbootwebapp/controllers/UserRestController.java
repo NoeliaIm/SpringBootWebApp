@@ -65,10 +65,6 @@ public class UserRestController {
         user2.setCp(8002);
         user2.setBirthDate(LocalDate.of(2005, 2,9));
 
-        /*  List<UserDto> users2 = new ArrayList<>();
-        users2.add(user);
-        users2.add(user2);
-        List<UserDto> users3 = List.of(user, user2);*/
         return Arrays.asList(user, user2);
     }
 }

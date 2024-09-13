@@ -1,0 +1,5 @@
+.detailDto{
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+}

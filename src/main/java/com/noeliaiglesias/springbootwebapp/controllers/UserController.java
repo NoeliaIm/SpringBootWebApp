@@ -28,8 +28,9 @@ public class UserController {
         userDto.setName("Noelia");
         userDto.setSurname("Iglesias");
         userDto.setCity("City 1");
-        userDto.setBirthDate(LocalDate.of(1980,12,31));
+        userDto.setBirthDate(LocalDate.of(1980, 12, 31));
         userDto.setCp(8001);
+        userDto.setEmail("hola@email.com");
         return "users/userdto";
     }
 }
