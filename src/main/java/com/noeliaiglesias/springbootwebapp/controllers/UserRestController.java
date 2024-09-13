@@ -3,13 +3,14 @@ package com.noeliaiglesias.springbootwebapp.controllers;
 
 
 import com.noeliaiglesias.springbootwebapp.models.User;
+import com.noeliaiglesias.springbootwebapp.models.dto.UserDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.time.LocalDate;
+import java.util.*;
 
 
 @RestController //para prescindir de la anotación @Controller y de la anotación @ResponseBody
@@ -35,5 +36,39 @@ public class UserRestController {
         user.setCity("City 1");
         user.setCp(8001);
         return user;
+    }
+
+    @GetMapping("/userdto")
+    public UserDto userDto() {
+        UserDto user = new UserDto();
+        user.setName("Noelia");
+        user.setSurname("Iglesias");
+        user.setCity("City 1");
+        user.setCp(8001);
+        user.setBirthDate(LocalDate.of(2008, 2,9));
+        return user;
+    }
+
+    @GetMapping("/list")
+    public List<UserDto> list() {
+        UserDto user = new UserDto();
+        user.setName("Noelia");
+        user.setSurname("Iglesias");
+        user.setCity("City 1");
+        user.setCp(8001);
+        user.setBirthDate(LocalDate.of(2008, 2,9));
+
+        UserDto user2 = new UserDto();
+        user2.setName("Valeria");
+        user2.setSurname("Martinez");
+        user2.setCity("City 2");
+        user2.setCp(8002);
+        user2.setBirthDate(LocalDate.of(2005, 2,9));
+
+        /*  List<UserDto> users2 = new ArrayList<>();
+        users2.add(user);
+        users2.add(user2);
+        List<UserDto> users3 = List.of(user, user2);*/
+        return Arrays.asList(user, user2);
     }
 }
