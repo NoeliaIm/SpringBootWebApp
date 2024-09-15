@@ -1,12 +1,16 @@
 package com.noeliaiglesias.springbootwebapp.models.dto;
 
 import com.noeliaiglesias.springbootwebapp.utils.DateUtils;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserDto {
 
     private String name;
@@ -17,7 +21,7 @@ public class UserDto {
 
     private int cp;
 
-    private LocalDate  birthDate;
+    private LocalDate birthDate;
 
     private String email;
 
@@ -27,5 +31,12 @@ public class UserDto {
 
     public String getFullName() {
         return name + " " + surname;
+    }
+
+    public String getEmail() {
+        if (email == null) {
+            return "n/a";
+        }
+        return email;
     }
 }

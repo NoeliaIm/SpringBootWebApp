@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+<body>
+<h1>Users</h1>
+<div th:if="${users.size() == 0}"> <!-- This is the same as th:if="${users.isEmpty()}" -->
+    <p>No users found</p>
+</div>
+<div th:unless="${users.size() == 0}"> <!-- This is the same as th:if="${users.size() != 0}" -->
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>CP</th>
+            <th>Date of birthday</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.fullName}"></td>
+            <td th:text="${user.city}"></td>
+            <td th:text="${user.cp}"></td>
+            <td th:text="${user.birthDate}"></td>
+            <td th:text="${user.email}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
