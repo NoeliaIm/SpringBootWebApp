@@ -28,7 +28,7 @@
             <td th:text="${user.city}"></td>
             <td th:text="${user.cp}"></td>
             <td th:text="${user.birthDate}"></td>
-            <td th:text="${user.email}"></td>
+            <td th:text="${user.email} ? ${user.email} : 'n/a' "></td>
         </tr>
         </tbody>
     </table>

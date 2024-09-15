@@ -33,10 +33,4 @@ public class UserDto {
         return name + " " + surname;
     }
 
-    public String getEmail() {
-        if (email == null) {
-            return "n/a";
-        }
-        return email;
-    }
 }
