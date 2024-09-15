@@ -5,6 +5,7 @@ import com.noeliaiglesias.springbootwebapp.models.dto.UserDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -39,12 +40,18 @@ public class UserController {
     @GetMapping("/users/list")
     public String list(ModelMap model) {
 
+        model.addAttribute("title", "List of users");
+        model.addAttribute("users", users());
+        return "users/list";
+    }
+
+    @ModelAttribute("users")
+    public List<UserDto> users() {
         UserDto userDto = new UserDto("Noelia", "Iglesias", "Boston", 8001, LocalDate.of(1978, 12, 31), "email@email.com");
         UserDto userDto1 = new UserDto("Valeria", "Maza", "California", 8001, LocalDate.of(1999, 11, 30), "email@email.com");
         UserDto userDto2 = new UserDto("Agustín", "Álvarez", "Chicago", 8001, LocalDate.of(2001, 3, 14), null);
-        List<UserDto> users = List.of(userDto, userDto1, userDto2);
-        // List<UserDto> users = new ArrayList<>();
-        model.put("users", users);
-        return "users/list";
+        return List.of(userDto, userDto1, userDto2);
+
     }
+
 }
