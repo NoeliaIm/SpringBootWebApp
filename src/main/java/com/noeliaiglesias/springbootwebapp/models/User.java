@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 public class User {
-    String name;
-    String city;
-    int cp;
+    private String name;
+    private String city;
+    private int cp;
 }
